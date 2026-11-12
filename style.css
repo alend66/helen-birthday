@@ -1937,13 +1937,75 @@ main {
   .hud { display: none; }
   .logo small { display: none; }
   .callpill { padding: 9px 16px; font-size: 0.8rem; }
+  .stop { padding: 11vh 6vw 6vh; }
+  :root { --sceneH: 19vh; }
+
+  /* Mobile Stack for Stop 01 */
+  .board {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 36px !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .polas {
+    position: relative !important;
+    height: auto !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 28px !important;
+    margin: 0 auto !important;
+  }
+
+  .pola {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: min(340px, 92%) !important;
+    max-width: 340px !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    padding: 12px 12px 48px !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22) !important;
+  }
+
+  .pola.p1, .pola.p2 {
+    transform: none !important;
+    margin: 0 auto !important;
+  }
+
+  .pola img {
+    width: 100% !important;
+    height: 270px !important;
+    object-fit: cover !important;
+    object-position: center 15% !important;
+    display: block !important;
+  }
+
+  .pola figcaption {
+    font-size: 1.5rem !important;
+    bottom: 12px !important;
+  }
+
+  .note {
+    width: 100% !important;
+    max-width: 580px !important;
+    padding: clamp(24px, 5vw, 36px) !important;
+    margin: 0 auto !important;
+    transform: none !important;
+    box-shadow: 6px 6px 0 var(--dk) !important;
+  }
+
   .pass { grid-template-columns: 1fr 140px; -webkit-mask: none; mask: none; }
   .seatbig b { font-size: 3.2rem; }
   .pl { padding: 22px 24px; }
   .ps b { font-size: 2rem; }
   .ps a { font-size: 0.68rem; padding: 8px 12px; letter-spacing: 0.08em; }
-  .stop { padding: 11vh 6vw 6vh; }
-  :root { --sceneH: 19vh; }
 }
 
 @media (max-width: 650px) {
