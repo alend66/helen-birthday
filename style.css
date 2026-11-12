@@ -724,62 +724,47 @@ main {
    =================================================== */
 .board {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
   align-items: center;
 }
 
 .polas {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
   position: relative;
-  width: 100%;
+  height: 520px;
 }
 
 .pola {
+  position: absolute;
   background: #fffdf6;
-  padding: 12px 12px 48px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
-  width: clamp(220px, 22vw, 290px);
+  padding: 12px 12px 46px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  width: min(340px, 85%);
   cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.3, 1.4, 0.5, 1), box-shadow 0.3s;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.pola.p1 {
-  transform: rotate(-3deg);
-}
-
-.pola.p2 {
-  transform: rotate(3deg);
-  margin-top: 24px;
+  transition: transform 0.5s cubic-bezier(0.3, 1.4, 0.5, 1);
 }
 
 .pola:hover {
-  transform: rotate(0deg) scale(1.05) translateY(-4px) !important;
+  transform: rotate(0) scale(1.05) !important;
   z-index: 10;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
 }
 
 .pola img {
   width: 100%;
-  aspect-ratio: 4 / 4.2;
+  height: 310px;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 15%;
   display: block;
-  border-radius: 2px;
 }
 
 .pola figcaption {
   position: absolute;
-  bottom: 12px;
+  bottom: 10px;
   left: 0;
   right: 0;
   text-align: center;
-  font: 700 1.55rem 'Caveat', cursive;
+  font: 700 1.65rem 'Caveat', cursive;
   color: var(--dk);
 }
 
@@ -787,13 +772,16 @@ main {
   position: absolute;
   top: -16px;
   left: 50%;
-  width: 100px;
-  height: 30px;
-  transform: translateX(-50%) rotate(-2deg);
-  background: rgba(240, 178, 62, 0.85);
+  width: 110px;
+  height: 32px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(240, 178, 62, 0.75);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
+
+.p1 { left: 0; top: 0; transform: rotate(-5deg); }
+.p2 { right: 0; bottom: 0; transform: rotate(5deg); }
 
 .note {
   background: var(--paper);
@@ -1945,41 +1933,10 @@ main {
   50% { transform: translate(40px, -60px); opacity: 1; }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 860px) {
   .hud { display: none; }
   .logo small { display: none; }
   .callpill { padding: 9px 16px; font-size: 0.8rem; }
-  .board { grid-template-columns: 1fr; gap: 40px; }
-  .polas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    height: auto;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  .pola {
-    position: relative !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    width: clamp(250px, 42vw, 300px) !important;
-    transform: none !important;
-    margin: 8px auto;
-  }
-  .pola.p1, .pola.p2 {
-    transform: none !important;
-    margin: 8px auto;
-  }
-  .note {
-    max-width: 660px;
-    margin: 0 auto;
-    padding: clamp(24px, 4vw, 36px);
-    transform: none !important;
-  }
   .pass { grid-template-columns: 1fr 140px; -webkit-mask: none; mask: none; }
   .seatbig b { font-size: 3.2rem; }
   .pl { padding: 22px 24px; }
