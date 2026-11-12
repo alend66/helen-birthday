@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Helen! 🎂 | Take The Ride & Celebrate</title>
+<meta name="description" content="A special birthday journey dedicated to Helen Johnson. Just sit back and enjoy the ride. Radiant joy, memories, sisterhood, and laughter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=DM+Sans:wght@400;500;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<!-- LIVING SKY (Transits from Golden Dawn -> Blue Sky -> Amber Sunset -> Starry Midnight) -->
+<div id="sky"></div>
+<div id="stars"></div>
+<div id="sun"></div>
+<div id="moon"></div>
+<div id="clouds"><i></i><i></i><i></i></div>
+<div id="flyers" aria-hidden="true">
+  <div class="bird b1">⌣⌣</div>
+  <div class="bird b2">⌣⌣</div>
+  <div class="bird b3">⌣⌣</div>
+  <div class="balloon"><i></i><b></b></div>
+</div>
+<div id="flies" aria-hidden="true"></div>
+<div id="progress"></div>
+
+<!-- TOP BAR + REAL-TIME ODOMETER / JOURNEY HUD -->
+<header class="top">
+  <a href="#home" class="logo">HELEN'S RIDE<small>birthday tour 2026</small></a>
+  <div class="hud" aria-hidden="true">
+    <span class="hud-stop" id="hud-stop">Departure</span>
+    <span class="hud-km"><b id="hud-km">0000</b> km</span>
+  </div>
+  <div class="top-actions">
+    <button id="musicToggleBtn" class="callpill" title="Play celebration melody">
+      🎵 <span id="musicLabel">Play Melody</span>
+    </button>
+  </div>
+</header>
+
+
+
+<main>
+
+  <!-- ==============================================
+       STOP 00: DEPARTURE / HERO
+       ============================================== -->
+  <section class="stop hero" id="home" data-stop="Departure">
+    <p class="hello rv">Birthday Celebrations · Joy · Milestones · Memories</p>
+    <h1 class="rv">
+      Just sit back<br>
+      &amp; <em>enjoy the ride, Helen.</em> 🎂
+    </h1>
+    <p class="hero-sub rv">
+      Radiant Smiles · True Sisterhood · Unstoppable Achievements &nbsp;—&nbsp; Celebrating You in 2026
+    </p>
+    <div class="cta rv">
+      <button id="heroConfettiBtn" class="btn">🥂 Celebrate Helen</button>
+      <a href="#welcome" class="btn alt">Start the Journey</a>
+    </div>
+    <p class="drive">scroll to drive the birthday road <span>→</span></p>
+  </section>
+
+  <!-- ==============================================
+       STOP 01: WELCOME ABOARD / POLAROIDS (PROFILE PHOTO!)
+       ============================================== -->
+  <section class="stop board" id="welcome" data-stop="The Birthday Girl">
+    
+    <!-- Vintage Taped Polaroids featuring the newly uploaded profile photo! -->
+    <div class="polas">
+      <figure class="pola p1 rv">
+        <span class="tape"></span>
+        <img src="images/helen-profile.png" alt="Happy Birthday Helen" class="pola-click" data-full="images/helen-profile.png" data-caption="Helen & Bestie — Radiant Smiles & Sisterhood">
+        <figcaption>the birthday girl ✦</figcaption>
+      </figure>
+
+      <figure class="pola p2 rv">
+        <span class="tape"></span>
+        <img src="images/college-gang-1.jpg" alt="Campus Fellowship" class="pola-click" data-full="images/college-gang-1.jpg" data-caption="Campus Fellowship & Laughter with Friends">
+        <figcaption>golden smiles 💛</figcaption>
+      </figure>
+    </div>
+
+    <!-- Personal Birthday Welcome Note -->
+    <div class="note rv">
+      <span class="sign">Stop 01 · Welcome Aboard</span>
+      <h2>Every new milestone should feel like <em>the best part of life's journey.</em></h2>
+      <p>
+        No stress, no rush. Today we celebrate your sparkling presence, your generous heart, and the warmth you give to everyone around you.
+      </p>
+      <p>
+        From unforgettable college corridors to bright new horizons ahead, may your road be lined with pure joy, triumphant milestones, and friendships that never fade.
+      </p>
+      <p class="hand">— with all our love, Your Squad 💖</p>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       STOP 02: MILESTONES (VINTAGE LUGGAGE TAGS)
+       ============================================== -->
+  <section class="stop services" id="milestones" data-stop="Milestones">
+    <div class="shead rv">
+      <span class="sign">Stop 02</span>
+      <h2>Packed for the trip: <em>Helen's golden traits</em></h2>
+    </div>
+
+    <div class="tags">
+      <div class="tagw t1 rv">
+        <div class="tag">
+          <small>TAG Nº 01</small>
+          <h3>Radiance</h3>
+          <p>A smile that naturally brightens up any room and turns ordinary moments into memories.</p>
+          <span>→ PURE SUNSHINE</span>
+        </div>
+      </div>
+
+      <div class="tagw t2 rv">
+        <div class="tag">
+          <small>TAG Nº 02</small>
+          <h3>Sisterhood</h3>
+          <p>The truest confidante and partner-in-crime, loyal through thick and thin.</p>
+          <span>→ EVERLASTING FRIEND</span>
+        </div>
+      </div>
+
+      <div class="tagw t3 rv">
+        <div class="tag">
+          <small>TAG Nº 03</small>
+          <h3>Grace</h3>
+          <p>Dignity, quiet strength, and unmatched elegance in everything she sets her heart upon.</p>
+          <span>→ BEAUTY & POISE</span>
+        </div>
+      </div>
+
+      <div class="tagw t4 rv">
+        <div class="tag">
+          <small>TAG Nº 04</small>
+          <h3>Ambition</h3>
+          <p>Ready to conquer fresh horizons with fearless courage and soaring success.</p>
+          <span>→ SKY IS THE LIMIT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       STOP 03: BIRTHDAY BOARDING PASS
+       ============================================== -->
+  <section class="stop fleet" id="boarding-passes" data-stop="Boarding Pass">
+    <div class="shead rv">
+      <span class="sign">Stop 03 · Boarding Gate</span>
+      <h2>Your <em>birthday boarding pass</em> ✈️🎂</h2>
+      <p style="margin-top:14px; font-size:1.15rem; color:var(--ink);">Confirmed &amp; ready for departure! Tap the boarding pass or button below to send your birthday wish to Helen on WhatsApp (+91 85477 40930).</p>
+    </div>
+
+    <ul class="passes">
+      <!-- Birthday Boarding Pass -->
+      <li class="rv" style="--r:0deg">
+        <div class="pass">
+          <div class="pl">
+            <small>HELEN AIRWAYS · BIRTHDAY BOARDING PASS</small>
+            <div class="seatbig"><b>01</b><span>SEAT</span></div>
+            <p>Passenger: <strong>Helen Johnson</strong> &bull; Non-Stop Happiness</p>
+            <div class="route">
+              <span>FROM <b>Today</b></span>
+              <i>→</i>
+              <span>TO <b>Infinite Joy &amp; Success</b></span>
+            </div>
+          </div>
+          <div class="ps">
+            <small>GATE</small>
+            <b>01</b>
+            <div class="bar"></div>
+            <a href="https://wa.me/918547740930?text=Happy%20Birthday%20Helen!" target="_blank" rel="noopener noreferrer" class="pass-btn pass-wa-btn" title="Send Happy Birthday to Helen on WhatsApp">Click Here 💬</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ==============================================
+       STOP 04: POSTCARDS FROM INSTAGRAM (ALL 7 STORIES VISIBLE)
+       ============================================== -->
+  <section class="stop cards" id="postcards" data-stop="Postcards">
+    <div class="shead rv">
+      <span class="sign">Stop 04 · Instagram Highlights</span>
+      <h2>Helen's <em>Instagram Story Highlights</em> 📱✨</h2>
+      <p style="margin-top:14px; font-size:1.15rem; color:var(--ink);">All 7 highlighted stories are visible below &bull; Tap any story or ring to open live on Instagram</p>
+    </div>
+
+    <!-- Instagram Highlight Story Bubbles Tray -->
+    <div class="insta-stories-tray rv">
+      <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4NDE4ODg4NTE5MDM1NTY0?story_media_id=3168420773186209845_59099594431&cplk=OTFic24xd3dmN3Bj" target="_blank" rel="noopener noreferrer" class="insta-bubble">
+        <div class="bubble-ring"><img src="images/helen-profile.png" alt="Highlight 1"></div>
+        <span>Story 1</span>
+      </a>
+      <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4NDE4ODg4NTE5MDM1NTY0?story_media_id=3185254903199579787_59099594431&srtk=OTFic24xd3dmN3Bj" target="_blank" rel="noopener noreferrer" class="insta-bubble">
+        <div class="bubble-ring"><img src="images/hero-squad-bg.jpg" alt="Highlight 2"></div>
+        <span>Story 2</span>
+      </a>
+      <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4NDE4ODg4NTE5MDM1NTY0?story_media_id=3288752354912424149_59099594431&psln=OTFic24xd3dmN3Bj" target="_blank" rel="noopener noreferrer" class="insta-bubble">
+        <div class="bubble-ring"><img src="images/college-gang-2.jpg" alt="Highlight 3"></div>
+        <span>Story 3</span>
+      </a>
+      <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM3NDYyOTEwMjM0NzEx?story_media_id=3587396418501430644_59099594431&dlrf=MXh4cGJ3MzViNnp1aQ==" target="_blank" rel="noopener noreferrer" class="insta-bubble">
+        <div class="bubble-ring"><img src="images/college-gang-1.jpg" alt="Highlight 4"></div>
+        <span>Story 4</span>
+      </a>
+      <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM3NDYyOTEwMjM0NzEx?story_media_id=3587403447097906511_59099594431&mdxt=MXh4cGJ3MzViNnp1aQ==" target="_blank" rel="noopener noreferrer" class="insta-bubble">
+        <div class="bubble-ring"><img src="images/helen-ncc.jpg" alt="Highlight 5"></div>
+        <span>Story 5</span>
+      </a>
+      <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM3NDYyOTEwMjM0NzEx?story_media_id=3587406689118829633_59099594431&srtk=MXh4cGJ3MzViNnp1aQ==" target="_blank" rel="noopener noreferrer" class="insta-bubble">
+        <div class="bubble-ring"><img src="images/hero-squad-bg.jpg" alt="Highlight 6"></div>
+        <span>Story 6</span>
+      </a>
+      <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM3NDYyOTEwMjM0NzEx?story_media_id=3587500845975692980_59099594431&dlrf=MXh4cGJ3MzViNnp1aQ==" target="_blank" rel="noopener noreferrer" class="insta-bubble">
+        <div class="bubble-ring"><img src="images/helen-profile.png" alt="Highlight 7"></div>
+        <span>Story 7</span>
+      </a>
+    </div>
+
+    <!-- Visible 9:16 Instagram Story Screens Grid -->
+    <div class="pcs">
+      
+      <!-- Visible Story 1 -->
+      <figure class="pc rv" style="--r:-2deg">
+        <span class="tape"></span>
+        <div class="story-screen-card">
+          <div class="story-progress-bar"><i></i><i></i><i></i><i></i></div>
+          <div class="story-header-pill">
+            <div class="story-avatar"><img src="images/helen-profile.png" alt="Helen"></div>
+            <div class="story-user-info">
+              <strong>helen_johnson</strong>
+              <small>Highlight &bull; 2h</small>
+            </div>
+            <span class="story-more-dots">&bull;&bull;&bull;</span>
+          </div>
+          <div class="story-photo-view">
+            <img src="images/helen-profile.png" alt="Story Highlight 1" class="story-main-img">
+            <div class="story-sticker">✨ Radiant Sisterhood 💖</div>
+          </div>
+          <div class="story-bottom-action">
+            <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4NDE4ODg4NTE5MDM1NTY0?story_media_id=3168420773186209845_59099594431&cplk=OTFic24xd3dmN3Bj" target="_blank" rel="noopener noreferrer" class="story-launch-btn">
+              Open Story 1 on Instagram ↗
+            </a>
+          </div>
+        </div>
+        <figcaption>the birthday girl ✦ <small>Story Highlight 01</small></figcaption>
+      </figure>
+
+      <!-- Visible Story 2 -->
+      <figure class="pc rv" style="--r:2deg">
+        <span class="tape"></span>
+        <div class="story-screen-card">
+          <div class="story-progress-bar"><i></i><i></i><i></i><i></i></div>
+          <div class="story-header-pill">
+            <div class="story-avatar"><img src="images/helen-profile.png" alt="Helen"></div>
+            <div class="story-user-info">
+              <strong>helen_johnson</strong>
+              <small>Highlight &bull; 4h</small>
+            </div>
+            <span class="story-more-dots">&bull;&bull;&bull;</span>
+          </div>
+          <div class="story-photo-view">
+            <img src="images/hero-squad-bg.jpg" alt="Story Highlight 2" class="story-main-img">
+            <div class="story-sticker">🎉 Squad Corridor Smiles 💛</div>
+          </div>
+          <div class="story-bottom-action">
+            <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4NDE4ODg4NTE5MDM1NTY0?story_media_id=3185254903199579787_59099594431&srtk=OTFic24xd3dmN3Bj" target="_blank" rel="noopener noreferrer" class="story-launch-btn">
+              Open Story 2 on Instagram ↗
+            </a>
+          </div>
+        </div>
+        <figcaption>golden memories ✦ <small>Story Highlight 02</small></figcaption>
+      </figure>
+
+      <!-- Visible Story 3 -->
+      <figure class="pc rv" style="--r:-1.5deg">
+        <span class="tape"></span>
+        <div class="story-screen-card">
+          <div class="story-progress-bar"><i></i><i></i><i></i><i></i></div>
+          <div class="story-header-pill">
+            <div class="story-avatar"><img src="images/helen-profile.png" alt="Helen"></div>
+            <div class="story-user-info">
+              <strong>helen_johnson</strong>
+              <small>Highlight &bull; 1d</small>
+            </div>
+            <span class="story-more-dots">&bull;&bull;&bull;</span>
+          </div>
+          <div class="story-photo-view">
+            <img src="images/college-gang-2.jpg" alt="Story Highlight 3" class="story-main-img">
+            <div class="story-sticker">🌸 Sunshine & Laughter 🌿</div>
+          </div>
+          <div class="story-bottom-action">
+            <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4NDE4ODg4NTE5MDM1NTY0?story_media_id=3288752354912424149_59099594431&psln=OTFic24xd3dmN3Bj" target="_blank" rel="noopener noreferrer" class="story-launch-btn">
+              Open Story 3 on Instagram ↗
+            </a>
+          </div>
+        </div>
+        <figcaption>pure laughter ✦ <small>Story Highlight 03</small></figcaption>
+      </figure>
+
+      <!-- Visible Story 4 -->
+      <figure class="pc rv" style="--r:2.2deg">
+        <span class="tape"></span>
+        <div class="story-screen-card">
+          <div class="story-progress-bar"><i></i><i></i><i></i><i></i></div>
+          <div class="story-header-pill">
+            <div class="story-avatar"><img src="images/helen-profile.png" alt="Helen"></div>
+            <div class="story-user-info">
+              <strong>helen_johnson</strong>
+              <small>Highlight &bull; 2d</small>
+            </div>
+            <span class="story-more-dots">&bull;&bull;&bull;</span>
+          </div>
+          <div class="story-photo-view">
+            <img src="images/college-gang-1.jpg" alt="Story Highlight 4" class="story-main-img">
+            <div class="story-sticker">🎂 Campus Fellowship ✦</div>
+          </div>
+          <div class="story-bottom-action">
+            <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM3NDYyOTEwMjM0NzEx?story_media_id=3587396418501430644_59099594431&dlrf=MXh4cGJ3MzViNnp1aQ==" target="_blank" rel="noopener noreferrer" class="story-launch-btn">
+              Open Story 4 on Instagram ↗
+            </a>
+          </div>
+        </div>
+        <figcaption>campus smiles ✦ <small>Story Highlight 04</small></figcaption>
+      </figure>
+
+      <!-- Visible Story 5 -->
+      <figure class="pc rv" style="--r:-2.4deg">
+        <span class="tape"></span>
+        <div class="story-screen-card">
+          <div class="story-progress-bar"><i></i><i></i><i></i><i></i></div>
+          <div class="story-header-pill">
+            <div class="story-avatar"><img src="images/helen-profile.png" alt="Helen"></div>
+            <div class="story-user-info">
+              <strong>helen_johnson</strong>
+              <small>Highlight &bull; 3d</small>
+            </div>
+            <span class="story-more-dots">&bull;&bull;&bull;</span>
+          </div>
+          <div class="story-photo-view">
+            <img src="images/helen-ncc.jpg" alt="Story Highlight 5" class="story-main-img">
+            <div class="story-sticker">⭐ Poise, Strength & Grace ⭐</div>
+          </div>
+          <div class="story-bottom-action">
+            <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM3NDYyOTEwMjM0NzEx?story_media_id=3587403447097906511_59099594431&mdxt=MXh4cGJ3MzViNnp1aQ==" target="_blank" rel="noopener noreferrer" class="story-launch-btn">
+              Open Story 5 on Instagram ↗
+            </a>
+          </div>
+        </div>
+        <figcaption>dignity & pride ✦ <small>Story Highlight 05</small></figcaption>
+      </figure>
+
+      <!-- Visible Story 6 -->
+      <figure class="pc rv" style="--r:1.8deg">
+        <span class="tape"></span>
+        <div class="story-screen-card">
+          <div class="story-progress-bar"><i></i><i></i><i></i><i></i></div>
+          <div class="story-header-pill">
+            <div class="story-avatar"><img src="images/helen-profile.png" alt="Helen"></div>
+            <div class="story-user-info">
+              <strong>helen_johnson</strong>
+              <small>Highlight &bull; 4d</small>
+            </div>
+            <span class="story-more-dots">&bull;&bull;&bull;</span>
+          </div>
+          <div class="story-photo-view">
+            <img src="images/hero-squad-bg.jpg" alt="Story Highlight 6" class="story-main-img">
+            <div class="story-sticker">💖 Squad Love Always 💖</div>
+          </div>
+          <div class="story-bottom-action">
+            <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM3NDYyOTEwMjM0NzEx?story_media_id=3587406689118829633_59099594431&srtk=MXh4cGJ3MzViNnp1aQ==" target="_blank" rel="noopener noreferrer" class="story-launch-btn">
+              Open Story 6 on Instagram ↗
+            </a>
+          </div>
+        </div>
+        <figcaption>endless smiles ✦ <small>Story Highlight 06</small></figcaption>
+      </figure>
+
+      <!-- Visible Story 7 -->
+      <figure class="pc rv" style="--r:-1.8deg">
+        <span class="tape"></span>
+        <div class="story-screen-card">
+          <div class="story-progress-bar"><i></i><i></i><i></i><i></i></div>
+          <div class="story-header-pill">
+            <div class="story-avatar"><img src="images/helen-profile.png" alt="Helen"></div>
+            <div class="story-user-info">
+              <strong>helen_johnson</strong>
+              <small>Highlight &bull; 5d</small>
+            </div>
+            <span class="story-more-dots">&bull;&bull;&bull;</span>
+          </div>
+          <div class="story-photo-view">
+            <img src="images/helen-profile.png" alt="Story Highlight 7" class="story-main-img">
+            <div class="story-sticker">🥂 Cheers to 2026 Milestone ✨</div>
+          </div>
+          <div class="story-bottom-action">
+            <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM3NDYyOTEwMjM0NzEx?story_media_id=3587500845975692980_59099594431&dlrf=MXh4cGJ3MzViNnp1aQ==" target="_blank" rel="noopener noreferrer" class="story-launch-btn">
+              Open Story 7 on Instagram ↗
+            </a>
+          </div>
+        </div>
+        <figcaption>celebration toast ✦ <small>Story Highlight 07</small></figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ==============================================
+       STOP 05: THE STAMP GALLERY (ALL PHOTOS CRYSTAL CLEAR)
+       ============================================== -->
+  <section class="stop dest" id="gallery" data-stop="Photo Stamps">
+    <div class="shead rv">
+      <span class="sign">Stop 05</span>
+      <h2>Postage stamps &amp; <em>cherished portraits</em></h2>
+      <p style="margin-top:14px; font-size:1.1rem; color:var(--ink);">A collector's album of real memories &bull; Click any stamp to view in high definition</p>
+    </div>
+
+    <div class="stamps">
+      
+      <!-- Stamp 1: New Profile Photo -->
+      <div class="stamp-card rv" style="--r:-3deg" data-full="images/helen-profile.png" data-caption="Helen & Bestie — Radiant Smiles & Sisterhood">
+        <div class="stamp-image-wrap">
+          <img src="images/helen-profile.png" alt="Helen & Friend">
+        </div>
+        <small>STAMP Nº 01</small>
+        <h3>Sisterhood</h3>
+        <p>Radiant smiles and heartwarming friendship</p>
+      </div>
+
+      <!-- Stamp 2: College Gang 1 -->
+      <div class="stamp-card rv" style="--r:2deg" data-full="images/college-gang-1.jpg" data-caption="College Days — Corridor Laughter with the Squad">
+        <div class="stamp-image-wrap">
+          <img src="images/college-gang-1.jpg" alt="College Squad">
+        </div>
+        <small>STAMP Nº 02</small>
+        <h3>Campus Smiles</h3>
+        <p>Unforgettable days filled with laughter</p>
+      </div>
+
+      <!-- Stamp 3: College Gang 2 -->
+      <div class="stamp-card rv" style="--r:-1.5deg" data-full="images/college-gang-2.jpg" data-caption="Squad Laughs — Sunshine & Genuine Memories">
+        <div class="stamp-image-wrap">
+          <img src="images/college-gang-2.jpg" alt="Squad Laughs">
+        </div>
+        <small>STAMP Nº 03</small>
+        <h3>Squad Joy</h3>
+        <p>Carefree laughs and golden memories</p>
+      </div>
+
+      <!-- Stamp 4: Proud Milestone Portrait -->
+      <div class="stamp-card rv" style="--r:2.5deg" data-full="images/helen-ncc.jpg" data-caption="Helen Johnson — Strength, Poise & Grace">
+        <div class="stamp-image-wrap">
+          <img src="images/helen-ncc.jpg" alt="Helen Johnson">
+        </div>
+        <small>STAMP Nº 04</small>
+        <h3>Poise &amp; Grace</h3>
+        <p>Quiet strength and shining dignity</p>
+      </div>
+
+    </div>
+    <p class="fine rv">Tap any stamp above to open full-screen in high definition ✨</p>
+  </section>
+
+  <!-- ==============================================
+       STOP 06: NIGHTFALL PIT STOP: THE CANDLE & CAKE CEREMONY
+       ============================================== -->
+  <section class="stop ceremony" id="ceremony" data-stop="Wish Ceremony">
+    <div class="shead rv">
+      <span class="sign">Stop 06</span>
+      <h2>Nightfall pit stop: <em>Make your secret wish</em> 🎂</h2>
+      <p style="margin-top:14px; font-size:1.15rem; color:var(--ink);">As the stars light up the sky, click the glowing candle flames or tap the button below!</p>
+    </div>
+
+    <!-- Candle Ceremony Stage -->
+    <div class="cake-ceremony-box rv">
+      
+      <!-- Realistic 3 Lit Birthday Candles -->
+      <div class="cake-candles-row">
+        <div class="candle" id="c1" data-lit="true">
+          <div class="flame"></div>
+          <div class="smoke"></div>
+          <div class="stick s1"></div>
+        </div>
+        <div class="candle" id="c2" data-lit="true">
+          <div class="flame"></div>
+          <div class="smoke"></div>
+          <div class="stick s2"></div>
+        </div>
+        <div class="candle" id="c3" data-lit="true">
+          <div class="flame"></div>
+          <div class="smoke"></div>
+          <div class="stick s3"></div>
+        </div>
+      </div>
+
+      <!-- Celebration Birthday Cake -->
+      <div class="cake-art">
+        <div class="cake-tier tier-top">
+          <span class="cherry">🍒</span>
+          <div class="icing"></div>
+        </div>
+        <div class="cake-tier tier-mid">
+          <div class="frosting-strip"></div>
+        </div>
+        <div class="cake-tier tier-base">
+          <span class="cake-plate"></span>
+        </div>
+      </div>
+
+      <!-- Ceremony Controls -->
+      <div class="cake-action-btns">
+        <button id="blowCandlesBtn" class="btn">💨 Blow Candles &amp; Make a Wish!</button>
+        <button id="relightCandlesBtn" class="btn alt hidden">🔄 Relight Candles</button>
+      </div>
+
+      <!-- Wish Result Card -->
+      <div id="wishModal" class="wish-reveal hidden">
+        <div class="wish-inner">
+          <div class="wish-icon">✨🥂✨</div>
+          <h3>Happy Birthday Helen!</h3>
+          <p>
+            Your wish is now soaring into the midnight sky! May every aspiration of your heart come true, surrounded by love, health, wealth, and boundless laughter.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================================
+       STOP 07: THE TELEGRAM FOR HELEN
+       ============================================== -->
+  <section class="stop final" id="telegram" data-stop="Grand Wishes">
+    <div class="shead rv">
+      <span class="open">SPECIAL DISPATCH</span>
+      <h2 class="neon">Happy Birthday Helen!</h2>
+      <p>TO: HELEN JOHNSON &bull; FROM: EVERYONE WHO LOVES YOU &bull; 2026</p>
+    </div>
+
+    <div class="telegram-sheet rv">
+      <div class="telegram-border"></div>
+      <p class="telegram-text">
+        DEAREST HELEN, <br><br>
+        AS YOU EMBARK ON THIS BRAND NEW CHAPTER OF LIFE, WE CELEBRATE THE BRIGHTNESS YOU BRING INTO OUR WORLDS. YOUR GENUINE SMILE, YOUR RADIANT SPIRIT, AND YOUR UNSHAKABLE WARMTH MAKE EVERY JOURNEY UNFORGETTABLE. <br><br>
+        MAY 2026 OVERFLOW WITH HEALTH, JOY, ADVENTURES, AND DREAMS SURPASSED. <br><br>
+        KEEP SHINING BRIGHT. ENJOY THE RIDE!
+      </p>
+      <div class="telegram-signature">
+        <span>— SIGNED WITH LOVE &amp; CELEBRATION ✦</span>
+      </div>
+    </div>
+
+    <div class="cta rv" style="margin-top: 36px;">
+      <button id="finalConfettiBtn" class="btn">🎉 Shower Golden Confetti</button>
+      <a href="#home" class="btn alt">Back to Departure ↑</a>
+    </div>
+
+    <small class="copy">CRAFTED WITH TIMELINES &bull; CELEBRATING HELEN JOHNSON &bull; 2026</small>
+  </section>
+
+</main>
+
+<!-- HIGH DEFINITION LIGHTBOX MODAL -->
+<div id="lightbox" class="lightbox-modal">
+  <div class="lightbox-inner">
+    <button id="closeLightbox" class="lightbox-close-btn">&times;</button>
+    <div class="lightbox-frame">
+      <img id="lbImg" src="" alt="High Definition Memory">
+    </div>
+    <p id="lbCaption" class="lightbox-caption"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
